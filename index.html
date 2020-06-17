@@ -82,11 +82,11 @@ function colorClock(){
   
   document.getElementById('seconds').innerHTML = seconds;
   
-  document.body.style.background = hexColor;
-  
   setTimeout(function() {
   colorClock();
 }, 1000);
+  
+  document.body.style.background = hexColor;
 }
 
 colorClock();
