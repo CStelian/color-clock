@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2020 by HelloThere838 (http://jsbin.com/pakomew/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Color Clock</title>
+<style id="jsbin-css">
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Piedra', cursive;
+  color: white;
+}
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  font-family: 'Piedra', cursive;
+  font-size: 30px;
+  margin-top: -15px;
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4">
+        <p>Hours</p>
+
+        <div id="hour"></div>
+      </div>
+      <div class="col-xs-4">
+        <p>Minutes</p>
+        <div id="minutes"></div>
+      </div>
+      <div class="col-xs-4">
+        <p>Seconds</p>
+        <div id="seconds"></div>
+      </div>
+    </div>
+  </div>
+<script id="jsbin-javascript">
+function colorClock(){
+  var date = new Date();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  var hexColor = '#' + minutes + hours + seconds;
+
+  if (hours <= 9) {
+    hours = '0' + hours;
+  }
+  if (minutes <= 9) {
+    minutes = '0' + minutes;
+  }
+  if (seconds <= 9) {
+    seconds = '0' + seconds;
+  }
+
+ document.getElementById('hour').innerHTML = hours;
+  
+  document.getElementById('minutes').innerHTML = minutes;
+  
+  document.getElementById('seconds').innerHTML = seconds;
+
+  
+  setTimeout(function() {
+  colorClock();
+}, 1000);
+  
+  document.body.style.background = hexColor;
+}
+
+colorClock();
+
+</script>
+</body>
+</html>
