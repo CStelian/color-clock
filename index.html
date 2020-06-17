@@ -18,8 +18,6 @@ Released under the MIT license: http://jsbin.mit-license.org
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Piedra', cursive;
-  color: white;
 }
 
 html, body {
@@ -30,6 +28,7 @@ html, body {
   text-align: center;
   position: relative;
   top: 50%;
+  color: white;
   font-family: 'Piedra', cursive;
   font-size: 30px;
   margin-top: -15px;
@@ -76,7 +75,9 @@ function colorClock(){
     seconds = '0' + seconds;
   }
 
- document.getElementById('hour').innerHTML = hours;
+  document.body.style.background = hexColor;
+  
+  document.getElementById('hour').innerHTML = hours;
   
   document.getElementById('minutes').innerHTML = minutes;
   
@@ -85,8 +86,6 @@ function colorClock(){
   setTimeout(function() {
   colorClock();
 }, 1000);
-  
-  document.body.style.background = hexColor;
 }
 
 colorClock();
