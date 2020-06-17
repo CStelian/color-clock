@@ -10,6 +10,40 @@ Released under the MIT license: http://jsbin.mit-license.org
 <meta name="robots" content="noindex">
 <html>
 <head>
+  <script id="jsbin-javascript">
+function colorClock(){
+  var date = new Date();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  var hexColor = '#' + minutes + hours + seconds;
+
+  if (hours <= 9) {
+    hours = '0' + hours;
+  }
+  if (minutes <= 9) {
+    minutes = '0' + minutes;
+  }
+  if (seconds <= 9) {
+    seconds = '0' + seconds;
+  }
+
+  document.body.style.background = hexColor;
+  
+  document.getElementById('hour').innerHTML = hours;
+  
+  document.getElementById('minutes').innerHTML = minutes;
+  
+  document.getElementById('seconds').innerHTML = seconds;
+  
+  setTimeout(function() {
+  colorClock();
+}, 1000);
+}
+
+colorClock();
+</script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -56,40 +90,5 @@ html, body {
       </div>
     </div>
   </div>
-  <div id="clock">12:13:14</div>
-<script id="jsbin-javascript">
-function colorClock(){
-  var date = new Date();
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var seconds = date.getSeconds();
-  var hexColor = '#' + minutes + hours + seconds;
-
-  if (hours <= 9) {
-    hours = '0' + hours;
-  }
-  if (minutes <= 9) {
-    minutes = '0' + minutes;
-  }
-  if (seconds <= 9) {
-    seconds = '0' + seconds;
-  }
-
-  document.body.style.background = hexColor;
-  
-  document.getElementById('hour').innerHTML = hours;
-  
-  document.getElementById('minutes').innerHTML = minutes;
-  
-  document.getElementById('seconds').innerHTML = seconds;
-  
-  setTimeout(function() {
-  colorClock();
-}, 1000);
-}
-
-colorClock();
-
-</script>
 </body>
 </html>
